@@ -1,0 +1,26 @@
+---
+ - name: To create users and groups
+   hosts: localhost
+   become: yes
+   tasks:
+   - name: Creating admin-group
+     group: name=admin-group gid= 123
+   - name: Creating 3 users
+     user:
+      name: "{{item.name}}"
+      group: "{{item.group}}"
+      password: "{{item.password}}"
+     with_items:
+      - {name: 'user1', group: 'admin-group', password: 'admin'} 
+      - {name: 'user2', group: 'admin-group', password: 'admin'} 
+      - {name: 'user3', group: 'admin-group', password: 'admin'} 
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+---
+ - name: To launch an EC2 instance
+   hosts: localhost
+   become: yes
+   tasks:
+   - name: launching EC2 instance
+     ec2:
+     key_name: mumbai
+     instance_type: t2.micro
+     region: ap-south-1
+     image: ami-052c08d70def0ac62
+     vpc_subnetid: vpc-d29771b9
+     assign_public_ip: yes
+     count: 1

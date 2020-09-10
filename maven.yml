@@ -1,0 +1,13 @@
+---
+ - name: To download a war file to deploy in tomcat
+   hosts: localhost
+   become: yes
+   tasks:
+   - name: downloading a war file
+   - maven_artifact:
+      group_id: com.company
+      artifact_id: web-app
+      extension: war
+      repository_url: 'https://repo.company.com/maven'
+      dest: /var/lib/tomcat7/webapps/web-app.war
+      

@@ -1,0 +1,14 @@
+---
+ - name: To create a new s3 bucket
+   hosts: localhost
+   become: yes
+   tasks:
+   - name: Creating s3 bucket
+     s3:
+     aws_access_key=
+     aws_secret_key=
+     bucket= rishi123
+     region= ap-south-1
+     object= /development
+     permission= public-read
+     mode= create

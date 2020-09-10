@@ -11,4 +11,4 @@
      image: ami-052c08d70def0ac62
      vpc_subnetid: vpc-d29771b9
      assign_public_ip: yes
-     count: 1
+     count: 2
